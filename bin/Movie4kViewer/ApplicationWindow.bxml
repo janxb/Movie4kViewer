@@ -1,0 +1,35 @@
+<buttons:EventHandler title="Movie4k-LinkFinder" maximized="true"
+    xmlns:bxml="http://pivot.apache.org/bxml"
+    xmlns:buttons="Movie4kViewer"
+    xmlns="org.apache.pivot.wtk">
+     <Border>
+        <TablePane bxml:id="tablePane" styles="{verticalSpacing:1, showHorizontalGridLines:false,
+            horizontalSpacing:1, showVerticalGridLines:false, padding:10}">
+            <columns>
+					<TablePane.Column width="100"/>
+               <TablePane.Column width="100"/>
+               <TablePane.Column width="100"/>
+               <TablePane.Column width="100"/>
+				</columns>
+ 
+            <TablePane.Row height="50">
+					<Label TablePane.columnSpan="4" text="Unten die Movie4k-URL einfuegen.." styles="{verticalAlignment:'center', horizontalAlignment:'center'}"/>
+				</TablePane.Row>
+
+				<TablePane.Row height="30">
+					<TextInput bxml:id="mainMovieLink" TablePane.columnSpan="4"/>
+            </TablePane.Row>
+            
+				<TablePane.Row height="30">
+					<PushButton bxml:id="convertButton" buttonData="Link suchen.."/>
+					<PushButton enabled="false" bxml:id="browserButton" buttonData="Browser"/>
+					<PushButton enabled="false" bxml:id="clipboardButton" buttonData="Kopieren"/>
+					<PushButton enabled="false" bxml:id="downloadButton" buttonData="jDownloader"/>
+				</TablePane.Row>
+            
+				<TablePane.Row height="200" bxml:id="statusRow">
+					<TextArea bxml:id="statusLabel" editable="false" TablePane.columnSpan="4"/>
+            </TablePane.Row>
+        </TablePane>
+    </Border>
+</buttons:EventHandler>
