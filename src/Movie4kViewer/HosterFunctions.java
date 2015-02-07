@@ -48,6 +48,30 @@ public class HosterFunctions {
 		} catch (Exception e) {}
 		return null;
 	}
+	
+	public static String validate_sharedsx(String hoster_url) {
+		Document doc = null;
+		try {
+			doc = download_webpage(hoster_url);
+			Element error_message = doc.select("div.jumbotron").first();
+			if (error_message == null) {
+				return hoster_url;
+			}
+		} catch (Exception e) {}
+		return null;
+	}
+	
+	public static String validate_hostingbulk(String hoster_url) {
+		Document doc = null;
+		try {
+			doc = download_webpage(hoster_url);
+			Element download_button = doc.select("input#btn_download").first();
+			if (download_button != null) {
+				return hoster_url;
+			}
+		} catch (Exception e) {}
+		return null;
+	}
 
 	public static String validate_sockshare(String hoster_url) {
 		Document doc = null;
@@ -56,7 +80,6 @@ public class HosterFunctions {
 			Element deletion_message = doc.select("div#deleted").first();
 			if (deletion_message == null) {
 				return hoster_url.replace("embed", "file");
-				//return "http://www.sockshare.com" + doc.select("div#file_title a").first().attr("href");
 			}
 		} catch (Exception e) {}
 		return null;

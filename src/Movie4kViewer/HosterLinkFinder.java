@@ -190,6 +190,12 @@ public class HosterLinkFinder {
 			case "embed.movshare.net":
 				validated = HosterFunctions.validate_movshare(hoster_url);
 				break;
+			case "shared.sx":
+				validated = HosterFunctions.validate_sharedsx(hoster_url);
+				break;
+			case "hostingbulk.com":
+				validated = HosterFunctions.validate_hostingbulk(hoster_url);
+				break;
 			case "embed.nowvideo.sx":
 			case "embed.nowvideo.eu":
 				validated = HosterFunctions.validate_nowvideo(hoster_url);
